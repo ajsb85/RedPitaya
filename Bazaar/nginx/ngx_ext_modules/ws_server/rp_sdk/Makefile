@@ -18,12 +18,11 @@ SOURCES= DataManager.cpp \
 OBJDIR=./objs
 SDKOBJDIR=$(OBJDIR)/rp_sdk
 
-CRYPTO_DIR=../../../../tools/cryptopp
-CRYPTO_INSTALL_DIR=../../../../tools/build
+ZLIB_DIR=../../../../tmp/zlib
 DECODERS_DIR=../../../../../Applications/la_pro/src/
 
 CXX=$(CROSS_COMPILE)g++
-CXXFLAGS=-c -s -Wall -Os -static -std=c++11 -fPIC -I$(LIBJSON_DIR) -DNDEBUG -I../../../../tools -I$(DECODERS_DIR) -I.
+CXXFLAGS=-c -s -Wall -Os -static -std=c++11 -fPIC -I$(LIBJSON_DIR) -DNDEBUG -I../../../../tools -I$(DECODERS_DIR) -I$(ZLIB_DIR) -I.
 
 ifeq ($(DIGITAL_LOOP),true)
 CXXFLAGS+=-DIGITAL_LOOP

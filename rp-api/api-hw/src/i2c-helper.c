@@ -3,7 +3,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include <linux/i2c.h>
 #include <linux/i2c-dev.h>
+#include "i2c-smbus-compat.h"
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>

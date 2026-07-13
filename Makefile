@@ -307,10 +307,10 @@ examples: lcr bode monitor calib spectrum acquire generator led_control
 
 # calibrate laboardtest
 
-# lcr:
-# 	$(MAKE) -C $(LCR_DIR) clean
-# 	$(MAKE) -C $(LCR_DIR) MODEL=$(MODEL)
-#	$(MAKE) -C $(LCR_DIR) install INSTALL_DIR=$(abspath $(INSTALL_DIR))
+lcr:
+	$(MAKE) -C $(LCR_DIR) clean
+	$(MAKE) -C $(LCR_DIR) MODEL=$(MODEL)
+	$(MAKE) -C $(LCR_DIR) install INSTALL_DIR=$(abspath $(INSTALL_DIR))
 
 bode: api
 	$(MAKE) -C $(BODE_DIR) clean

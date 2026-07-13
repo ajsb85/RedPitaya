@@ -13,7 +13,7 @@ set (BUILD_SHARED_LIBS OFF CACHE INTERNAL "Turn off shared")
 set (JSONCPP_WITH_TESTS OFF CACHE INTERNAL "Turn off jsontest")
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon -fPIC")
 endif()
 
 
@@ -34,7 +34,7 @@ add_library(${PROJECT_NAME})
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
     target_compile_options(${PROJECT_NAME}
-        PRIVATE -mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+        PRIVATE -mcpu=cortex-a9 -mfpu=neon -fPIC)
 
     target_compile_definitions(${PROJECT_NAME}
         PRIVATE ARCH_ARM)

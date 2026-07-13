@@ -62,7 +62,11 @@ int rp_SetSgmntS(rp_handle_uio_t *handle, unsigned long no) {
 }
 
 int rp_DmaRead(rp_handle_uio_t *handle) {
+    /* Deliberate UIO interrupt-wait read(); the buffer content is unused. */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wnonnull"
     int s = read(handle->dma_fd, NULL, 1);
+#pragma GCC diagnostic pop
     if (s<0) {
       printf("read error\n");
       return -1;

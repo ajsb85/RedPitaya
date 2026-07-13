@@ -21,6 +21,7 @@ INCLUDE += -I$(INSTALL_DIR)/rp_sdk/libjson
 
 LIBS = -L$(INSTALL_DIR)/lib
 LIBS += -L$(INSTALL_DIR)/rp_sdk
+LIBS += -L$(INSTALL_DIR)/../tmp/zlib -lz
 
 COMMON_FLAGS+=-Wall -fPIC -Os -s -w -DASIO_STANDALONE
 CFLAGS += $(COMMON_FLAGS) $(INCLUDE)

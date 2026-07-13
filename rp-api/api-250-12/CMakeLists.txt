@@ -8,8 +8,6 @@ option(BUILD_TOOL   "Build tool" ON)
 
 option(IS_INSTALL "Install library" ON)
 
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 11)
 set(C_STANDARD 11)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
@@ -62,7 +60,7 @@ file(GLOB PR_GPIO_SOURCES "src/rp-gpio-power.cpp"
 
 file(GLOB RP_HEADERS "include/*.h")
 
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC)
 add_compile_definitions(ARCH_ARM)
 add_compile_options(-Wall -pedantic -Wextra -D${MODEL} $<$<CONFIG:Debug>:-g3> $<$<CONFIG:Release>:-Os> -ffunction-sections -fdata-sections)
 link_libraries(-L${INSTALL_DIR}/lib librp-hw.a)

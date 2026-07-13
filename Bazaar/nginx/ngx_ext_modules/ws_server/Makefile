@@ -1,6 +1,7 @@
 LIBJSON_DIR=../../../tools/libjson
+ASIO_DIR=../../../../tmp/asio/asio/include
 CXX=$(CROSS_COMPILE)g++
-CXXFLAGS=-c -Wall -Os -s -static -std=c++11 -Iwebsocketpp $(SYSROOT) -I$(LIBJSON_DIR) -I$(LIBJSON_DIR)/.. -L. -lboost_system -DWEBSOCKETPP_STRICT_MASKING
+CXXFLAGS=-c -Wall -Os -s -static -std=c++11 -Iwebsocketpp -I$(ASIO_DIR) -DASIO_STANDALONE $(SYSROOT) -I$(LIBJSON_DIR) -I$(LIBJSON_DIR)/.. -L. -DWEBSOCKETPP_STRICT_MASKING
 
 SOURCES= rp_websocket_server.cpp \
 	ws_server.cpp \

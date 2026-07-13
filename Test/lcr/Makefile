@@ -28,8 +28,8 @@ SRCS = $(subst .o,.c, $(OBJS)))
 TARGET=lcr
 
 # GCC compiling & linking flags
-CFLAGS  = -g -std=gnu99 -Wall -Werror
-CFLAGS += -I../../api/include
+CFLAGS  = -g -std=gnu99 -Wall -Werror -Wno-error=misleading-indentation
+CFLAGS += -I../../rp-api/api/include
 CFLAGS += -DVERSION=$(VERSION) -DREVISION=$(REVISION) -D$(MODEL)
 
 # Additional libraries which needs to be dynamically linked to the executable

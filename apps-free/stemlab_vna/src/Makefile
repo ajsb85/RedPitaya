@@ -11,6 +11,7 @@ INCLUDE += -I$(INSTALL_DIR)/rp_sdk/libjson
 
 LIBS = -L$(INSTALL_DIR)/lib
 LIBS += -L$(INSTALL_DIR)/rp_sdk
+LIBS += -L$(INSTALL_DIR)/../tmp/zlib -lz
 
 COMMON_FLAGS+=-Wall -fPIC -Os -s -funroll-loops
 CFLAGS+=$(COMMON_FLAGS) $(INCLUDE)
@@ -19,7 +20,7 @@ CFLAGS+= -DNDEBUG
 endif
 LDFLAGS =-shared $(COMMON_FLAGS) $(LIBS)
 LDFLAGS+= -Wl,--whole-archive
-LDFLAGS+= -lcryptopp -lrp_sdk -lrp2
+LDFLAGS+= -lrp_sdk -lrp2
 LDFLAGS+= -Wl,--no-whole-archive
 
 COBJECTS=$(CSOURCES:.c=.o)
