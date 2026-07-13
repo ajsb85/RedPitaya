@@ -91,7 +91,7 @@ if(NOT WIN32 )
 endif()
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon-fp16")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon")
     add_compile_definitions(ARCH_ARM)
 endif()
 

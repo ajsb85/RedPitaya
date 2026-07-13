@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
 
@@ -95,7 +93,7 @@ link_directories(${libs_paths})
 
 file(GLOB SOURCES "src/*.cpp")
 
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC -D_FILE_OFFSET_BITS=64)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC -D_FILE_OFFSET_BITS=64)
 add_compile_definitions(ARCH_ARM)
 add_compile_options(-Wall -Wno-reorder -Wno-cpp -Wextra $<$<CONFIG:Release>:-Wno-unused-parameter> $<$<CONFIG:Release>:-Wno-unused-variable>)
 add_compile_options($<$<CONFIG:Debug>:-DTRACE_ENABLE>)

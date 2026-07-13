@@ -18,9 +18,6 @@ SOURCES= DataManager.cpp \
 OBJDIR=./objs
 SDKOBJDIR=$(OBJDIR)/rp_sdk
 
-CRYPTO_DIR=../../../../tools/cryptopp
-CRYPTO_INSTALL_DIR=../../../../tools/build
-
 CXX=$(CROSS_COMPILE)g++
 CXXFLAGS=-c -s -Wall -Wno-reorder -Wno-cpp -Os -static -std=c++17 -fPIC -I$(LIBJSON_DIR) -DNDEBUG -I../../../../tools -I.
 

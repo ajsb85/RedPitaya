@@ -128,7 +128,7 @@ void rp_websocket_server::run(std::string docroot, uint16_t port) {
 
     m_endpoint.set_reuse_addr(true);
     // listen on specified port
-    m_endpoint.listen(boost::asio::ip::tcp::v4(), port);
+    m_endpoint.listen(websocketpp::lib::asio::ip::tcp::v4(), port);
     // m_endpoint.listen(port);
     // Start the server accept loop
     m_endpoint.start_accept();

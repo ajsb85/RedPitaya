@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <sys/param.h>
 #include <unistd.h>
+#include <algorithm>
 #include <iostream>
 #include <set>
 #include <string>

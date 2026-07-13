@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <map>
+#include <algorithm>
 #include <list>
 #include <linux/can.h>
 #include <linux/can/raw.h>

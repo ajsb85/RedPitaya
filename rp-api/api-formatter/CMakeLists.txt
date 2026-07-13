@@ -11,8 +11,6 @@ option(BUILD_DOC "Build documentation" ON)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 20)
 set(C_STANDARD 20)
 
@@ -91,7 +89,7 @@ target_include_directories(${PROJECT_NAME}-obj PUBLIC "src/tdms")
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
     target_compile_options(${PROJECT_NAME}-obj
-        PRIVATE -mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+        PRIVATE -mcpu=cortex-a9 -mfpu=neon -fPIC)
     target_compile_definitions(${PROJECT_NAME}-obj
         PRIVATE ARCH_ARM)
 endif()

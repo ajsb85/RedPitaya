@@ -101,7 +101,7 @@ list(APPEND header
 
 #add_compile_options(-fsanitize=address)
 add_compile_options(-DVERSION=${VERSION} -DREVISION=${REVISION})
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC)
 add_compile_options($<$<CONFIG:Debug>:-g3>)
 add_compile_options($<$<CONFIG:Debug>:-DTRACE_ENABLE> $<$<CONFIG:Release>:-Os> -ffunction-sections -fdata-sections)
 add_compile_definitions(ARCH_ARM)

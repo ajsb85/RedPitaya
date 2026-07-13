@@ -15,6 +15,7 @@
 #ifndef __UPDATER_COMMON_API_H
 #define __UPDATER_COMMON_API_H
 
+#include <cstdint>
 #include <string>
 #include <vector>
 
