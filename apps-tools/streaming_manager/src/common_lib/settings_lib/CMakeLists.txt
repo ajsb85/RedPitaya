@@ -32,7 +32,7 @@ set (JSONCPP_WITH_PKGCONFIG_SUPPORT OFF CACHE INTERNAL "Turn off JSONCPP_WITH_PK
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations -Wno-deprecated")
 
 # if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-#     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon-fp16 -Wno-deprecated-declarations -Wno-deprecated")
+#     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=cortex-a9 -mfpu=neon -Wno-deprecated-declarations -Wno-deprecated")
 # endif()
 
 # if(NOT WIN32)

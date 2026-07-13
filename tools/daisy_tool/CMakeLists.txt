@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 20)
 set(C_STANDARD 20)
 
@@ -53,7 +51,7 @@ include_directories(${INSTALL_DIR}/include)
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB RP_HEADERS "src/*.h")
 
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC)
 add_compile_definitions(ARCH_ARM)
 add_compile_options($<$<CONFIG:Debug>:-DTRACE_ENABLE>)
 add_compile_options(-Wall -Wpedantic -Wextra -DVERSION=${VERSION} -DREVISION=${REVISION} $<$<CONFIG:Debug>:-g3> $<$<CONFIG:Release>:-Os>  -ffunction-sections -fdata-sections)

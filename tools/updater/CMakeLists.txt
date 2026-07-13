@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 20)
 set(C_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE OFF)
@@ -55,7 +53,7 @@ include_directories(${INSTALL_DIR}/include/common)
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB RP_HEADERS "src/*.h")
 
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC)
 add_compile_definitions(ARCH_ARM)
 add_compile_options($<$<CONFIG:Debug>:-DTRACE_ENABLE>)
 add_compile_options(-Wall -Wpedantic -Wextra -Wno-unused-parameter -Wno-unused-result -DVERSION=${VERSION} -DREVISION=${REVISION} $<$<CONFIG:Debug>:-g3> $<$<CONFIG:Release>:-Os>  -ffunction-sections -fdata-sections)
@@ -65,7 +63,7 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_link_directories(${PROJECT_NAME} PRIVATE ${INSTALL_DIR}/lib ${INSTALL_DIR}/lib/web)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE -l:librp-updater.a -l:librp-websocket.a -lzip -lssl -lcrypto -lcurl -lm pthread)
+target_link_libraries(${PROJECT_NAME} PRIVATE -l:librp-updater.a -l:librp-websocket.a -lzip -lcurl -lssl -lcrypto -lm -lz pthread)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${INSTALL_DIR}/bin)
 

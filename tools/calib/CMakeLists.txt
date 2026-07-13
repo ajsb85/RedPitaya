@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/output)
 
@@ -58,7 +56,7 @@ list(APPEND r_paths
 
 set(CMAKE_INSTALL_RPATH ${r_paths})
 
-add_compile_options(-mcpu=cortex-a9 -mfpu=neon-fp16 -fPIC)
+add_compile_options(-mcpu=cortex-a9 -mfpu=neon -fPIC)
 add_compile_definitions(ARCH_ARM)
 add_compile_options($<$<CONFIG:Debug>:-DTRACE_ENABLE>)
 add_compile_options(-Wall -Wpedantic -Wextra -DVERSION=${VERSION} -DREVISION=${REVISION} $<$<CONFIG:Debug>:-g3> $<$<CONFIG:Release>:-Os>)
